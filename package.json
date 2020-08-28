@@ -26,13 +26,13 @@
   "devDependencies": {
     "chai": "4",
     "eslint": "7",
-    "eslint-config-blueimp": "2",
+    "eslint-config-blueimp": "^2.1.0",
     "eslint-config-prettier": "6",
     "eslint-plugin-jsdoc": "30",
     "eslint-plugin-prettier": "3",
     "mocha": "8",
     "prettier": "2",
-    "uglify-js": "3"
+    "uglify-es": "3"
   },
   "eslintConfig": {
     "extends": [
@@ -60,7 +60,7 @@
     "lint": "eslint .",
     "unit": "mocha",
     "test": "npm run lint && npm run unit",
-    "build": "cd js && uglifyjs md5.js -c -m -o md5.min.js --source-map url=md5.min.js.map",
+    "build": "cd js && npx uglify-es md5.js -c -m -o md5.min.js --source-map url=md5.min.js.map",
     "preversion": "npm test",
     "version": "npm run build && git add -A js",
     "postversion": "git push --tags origin master master:gh-pages && npm publish"

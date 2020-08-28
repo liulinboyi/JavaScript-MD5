@@ -21,7 +21,6 @@
 
 /* eslint-disable strict */
 
-;(function ($) {
   'use strict'
 
   /**
@@ -390,13 +389,15 @@
     return rawHMACMD5(key, string)
   }
 
-  if (typeof define === 'function' && define.amd) {
-    define(function () {
-      return md5
-    })
-  } else if (typeof module === 'object' && module.exports) {
-    module.exports = md5
-  } else {
-    $.md5 = md5
-  }
-})(this)
+  // if (typeof define === 'function' && define.amd) {
+  //   define(function () {
+  //     return md5
+  //   })
+  // } else if (typeof module === 'object' && module.exports) {
+  //   module.exports = md5
+  // } else {
+  //   $.md5 = md5
+  // }
+
+  export default md5;
+  
